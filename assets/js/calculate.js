@@ -35,11 +35,10 @@ rectangleArea.innerText = rArea;
 
 function CalculateParallelogramArea(){
     const base = getInputValue('Parallelogram-b');
-    console.log(base);
-
     const hight = getInputValue('Parallelogram-h');
-    console.log(hight);
-
+    if(isNaN(base)||isNaN(hight)){
+        alert('Place insert Number ')
+    }
     const area = base * hight;
     setElementInnerText('Parallelogram-area',area);
 }
@@ -59,6 +58,10 @@ function setElementInnerText(elementId, area){
 function calculateEllipseArea(){
     const A = getInputValue('ellips-frist-radius');
     const B = getInputValue('ellips-second-radius');
+    if (isNaN(A) || isNaN(B)){
+        alert('Place insert Number');
+        return;
+    }
     const area =   A * B * 3.1416 ;
     const areaTwoDecimal = area.toFixed(2);
     setElementInnerText('ellips-area', areaTwoDecimal);
@@ -67,6 +70,10 @@ function calculateEllipseArea(){
 function CalculateRhombusArea(){
     const mejarment1 = getInputValue('Rhombus-d1');
     const mejarment2 = getInputValue('Rhombus-d2');
+    if (isNaN(mejarment1) || isNaN(mejarment2)){
+        alert('Please insert Number')
+        return;
+    }
     const area = 0.5 * mejarment1 * mejarment2;
     setElementInnerText('Rhombus-area',area);
 } 
@@ -75,6 +82,10 @@ function CalculateRhombusArea(){
 function CalculatePentagonArea(){
     const mejarment1 = getInputValue('Pentagon-b');
     const mejarment2 = getInputValue('Pentagon-h');
+    if(isNaN(mejarment1) || isNaN(mejarment2)){
+        alert('Please insert Number');
+        return;
+    }
     const area = 0.5 * mejarment1 * mejarment2;
     setElementInnerText('Pentagon-area',area);
 }
